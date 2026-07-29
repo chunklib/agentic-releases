@@ -8,9 +8,9 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.3` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic Desktop | `1.0.3` | macOS arm64, ad-hoc signed and not Apple-notarized |
-| Upstream baseline | OpenCode `v1.18.8` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
+| CLI / npm | `agency-agentic@1.0.4` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic Desktop | `1.0.4` | macOS arm64, ad-hoc signed and not Apple-notarized |
+| Upstream baseline | OpenCode `v1.18.9` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
