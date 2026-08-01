@@ -8,13 +8,13 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.8` release candidate | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic Desktop | `1.0.8` release candidate | macOS arm64, ad-hoc signed and not Apple-notarized |
+| CLI / npm | `agency-agentic@1.0.8` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic Desktop | `1.0.8` | macOS arm64, ad-hoc signed and not Apple-notarized |
 | Upstream baseline | OpenCode `v1.18.11` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-The Agentic 1.0.8 release candidate follows OpenCode v1.18.11 while the published Agentic 1.0.7 binaries remain based on v1.18.10 until release verification completes. The candidate adopts upstream stale-read fixes for Desktop titlebar, new-session, and V2 prompt controls; MCP SSE error-response recovery; custom interleaved reasoning fields; and external-link navigation policy. Agentic retains its Desktop layout recovery, selected-row theme, provider policy, updater, and Node sidecar boundaries.
+Agentic 1.0.8 follows OpenCode v1.18.11. It adopts upstream stale-read fixes for Desktop titlebar, new-session, and V2 prompt controls; MCP SSE error-response recovery; custom interleaved reasoning fields; and external-link navigation policy. Agentic retains its Desktop layout recovery, selected-row theme, provider policy, updater, and Node sidecar boundaries.
 
 ## Install
 
