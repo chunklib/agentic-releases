@@ -8,11 +8,20 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.4` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic Desktop | `1.0.4` | macOS arm64, ad-hoc signed and not Apple-notarized |
-| Upstream baseline | OpenCode `v1.18.9` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
+| CLI / npm | `agency-agentic@1.0.5` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic Desktop | `1.0.5` | macOS arm64, ad-hoc signed and not Apple-notarized |
+| Upstream baseline | OpenCode `v1.18.10` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
+
+## Next release candidate
+
+| Product | Candidate | Planned platform |
+|---|---:|---|
+| CLI / npm | `agency-agentic@1.0.6` | npm package and macOS arm64 compatibility archive |
+| Agentic Desktop | `1.0.6` | macOS arm64, ad-hoc signed and not Apple-notarized |
+
+The 1.0.6 candidate keeps OpenCode v1.18.10 as its upstream baseline. It makes the CLI/TUI prefer the terminal-derived `system` theme for fresh profiles and gives Web/Desktop a dedicated Agentic light/dark theme. The shared Agentic brand color remains `#d77757`; existing persisted theme choices are not overwritten. This section describes an unpublished candidate until the release records below are updated with final registry, tag, asset, checksum, and signing facts.
 
 ## Install
 
@@ -38,6 +47,8 @@ Agentic intentionally keeps its fork surface narrow. Current product-specific or
 
 - Agentic command, configuration, data, application, protocol, visual identity, and independent release channels.
 - CLI, TUI, version-matched Web UI, and Desktop product surfaces.
+- Persisted-tab recovery, refined titlebar interactions, attachment deduplication, and updated toast/review navigation from the OpenCode v1.18.10 baseline.
+- Provider allowlists enforced before dynamic discovery hooks; Modal discovery credentials restricted to approved HTTPS Modal inference origins.
 - `AGENTS.md` instruction discovery across global, project-root, and nested directory scopes, with closer instructions applied as files are accessed.
 - Upstream model-specific prompt strategies plus a thin generic engineering discipline covering diagnosis, sensitive information, minimal changes, and truthful verification.
 - Agentic Desktop aligned with the official Electron `utilityProcess` and Node server-sidecar lifecycle.

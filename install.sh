@@ -60,12 +60,16 @@ fi
 mkdir -p "$INSTALL_DIR/bin"
 
 echo "→ Downloading ${DOWNLOAD_URL}..."
-TMP_ZIP=$(mktemp)
-TMP_CHECKSUM=$(mktemp)
+TEMP_ROOT=${TMPDIR:-/tmp}
+mkdir -p "$TEMP_ROOT"
+TMP_ZIP=$(mktemp "$TEMP_ROOT/agentic-install.zip.XXXXXX")
+TMP_CHECKSUM=$(mktemp "$TEMP_ROOT/agentic-install.sha256.XXXXXX")
 TMP_DIR=""
+STAGED_BINARY=""
 cleanup() {
   rm -f "$TMP_ZIP"
   rm -f "$TMP_CHECKSUM"
+  if [ -n "$STAGED_BINARY" ]; then rm -f "$STAGED_BINARY"; fi
   if [ -n "$TMP_DIR" ]; then rm -rf "$TMP_DIR"; fi
 }
 trap cleanup EXIT INT TERM
@@ -75,30 +79,34 @@ curl -fsSL "$DOWNLOAD_URL" -o "$TMP_ZIP" || {
   exit 1
 }
 
-if curl -fsSL "${DOWNLOAD_URL}.sha256" -o "$TMP_CHECKSUM"; then
-  EXPECTED_SHA256=$(awk '{ print $1; exit }' "$TMP_CHECKSUM")
-  ACTUAL_SHA256=$(sha256_file "$TMP_ZIP")
-  if [ -z "$EXPECTED_SHA256" ] || [ "$EXPECTED_SHA256" != "$ACTUAL_SHA256" ]; then
-    echo "❌ Release checksum verification failed."
-    exit 1
-  fi
-  echo "   ✓ SHA256 verified"
-elif [ "${AGENTIC_REQUIRE_CHECKSUM:-0}" = "1" ]; then
+if ! curl -fsSL "${DOWNLOAD_URL}.sha256" -o "$TMP_CHECKSUM"; then
   echo "❌ Release checksum is missing."
   exit 1
-else
-  echo "⚠️  This legacy release has no checksum asset; continuing for compatibility."
 fi
+EXPECTED_SHA256=$(awk '{ print $1; exit }' "$TMP_CHECKSUM")
+ACTUAL_SHA256=$(sha256_file "$TMP_ZIP")
+if [ -z "$EXPECTED_SHA256" ] || [ "$EXPECTED_SHA256" != "$ACTUAL_SHA256" ]; then
+  echo "❌ Release checksum verification failed."
+  exit 1
+fi
+echo "   ✓ SHA256 verified"
 
 echo "→ Extracting..."
-TMP_DIR=$(mktemp -d)
+TMP_DIR=$(mktemp -d "$TEMP_ROOT/agentic-install.extract.XXXXXX")
 unzip -qo "$TMP_ZIP" -d "$TMP_DIR"
 if [ ! -f "$TMP_DIR/agentic" ]; then
   echo "❌ Release archive is invalid: missing agentic binary."
   exit 1
 fi
-cp "$TMP_DIR/agentic" "$INSTALL_DIR/bin/agentic"
-chmod +x "$INSTALL_DIR/bin/agentic"
+STAGED_BINARY="$INSTALL_DIR/bin/.agentic.new.$$"
+cp "$TMP_DIR/agentic" "$STAGED_BINARY"
+chmod +x "$STAGED_BINARY"
+if ! "$STAGED_BINARY" --version >/dev/null 2>&1; then
+  echo "❌ Downloaded Agentic binary failed its pre-install smoke test."
+  exit 1
+fi
+mv -f "$STAGED_BINARY" "$INSTALL_DIR/bin/agentic"
+STAGED_BINARY=""
 cleanup
 trap - EXIT INT TERM
 
