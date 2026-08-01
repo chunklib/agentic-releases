@@ -8,13 +8,13 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.7` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic Desktop | `1.0.7` | macOS arm64, ad-hoc signed and not Apple-notarized |
-| Upstream baseline | OpenCode `v1.18.10` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
+| CLI / npm | `agency-agentic@1.0.8` release candidate | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic Desktop | `1.0.8` release candidate | macOS arm64, ad-hoc signed and not Apple-notarized |
+| Upstream baseline | OpenCode `v1.18.11` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.0.7 keeps OpenCode v1.18.10 as its upstream baseline. It repairs the 1.0.6 Web/Desktop theme migration, aligns user-message and switch colors, makes layout-transition eligibility consistent across Web and Desktop, and reports the Agentic product version in standalone Web builds. The macOS Desktop release also includes the complete updater manifest, ZIP and blockmap asset set required by the in-app updater. The shared Agentic brand color remains `#d77757`; functional controls use the interaction blue `#339cff` in both light and dark modes.
+The Agentic 1.0.8 release candidate follows OpenCode v1.18.11 while the published Agentic 1.0.7 binaries remain based on v1.18.10 until release verification completes. The candidate adopts upstream stale-read fixes for Desktop titlebar, new-session, and V2 prompt controls; MCP SSE error-response recovery; custom interleaved reasoning fields; and external-link navigation policy. Agentic retains its Desktop layout recovery, selected-row theme, provider policy, updater, and Node sidecar boundaries.
 
 ## Install
 
@@ -40,7 +40,7 @@ Agentic intentionally keeps its fork surface narrow. Current product-specific or
 
 - Agentic command, configuration, data, application, protocol, visual identity, and independent release channels.
 - CLI, TUI, version-matched Web UI, and Desktop product surfaces.
-- Persisted-tab recovery, refined titlebar interactions, attachment deduplication, and updated toast/review navigation from the OpenCode v1.18.10 baseline.
+- Persisted-tab recovery, keyed titlebar and prompt controls, attachment deduplication, and updated toast/review navigation from the OpenCode v1.18.11 baseline.
 - Provider allowlists enforced before dynamic discovery hooks; Modal discovery credentials restricted to approved HTTPS Modal inference origins.
 - `AGENTS.md` instruction discovery across global, project-root, and nested directory scopes, with closer instructions applied as files are accessed.
 - Upstream model-specific prompt strategies plus a thin generic engineering discipline covering diagnosis, sensitive information, minimal changes, and truthful verification.
