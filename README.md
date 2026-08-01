@@ -8,13 +8,13 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.6` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic Desktop | `1.0.6` | macOS arm64, ad-hoc signed and not Apple-notarized |
+| CLI / npm | `agency-agentic@1.0.7` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic Desktop | `1.0.7` | macOS arm64, ad-hoc signed and not Apple-notarized |
 | Upstream baseline | OpenCode `v1.18.10` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.0.6 keeps OpenCode v1.18.10 as its upstream baseline. It makes the CLI/TUI prefer the terminal-derived `system` theme for fresh profiles and gives Web/Desktop a dedicated Agentic light/dark theme. The shared Agentic brand color remains `#d77757`; existing persisted theme choices are not overwritten.
+Agentic 1.0.7 keeps OpenCode v1.18.10 as its upstream baseline. It repairs the 1.0.6 Web/Desktop theme migration, aligns user-message and switch colors, makes layout-transition eligibility consistent across Web and Desktop, and reports the Agentic product version in standalone Web builds. The macOS Desktop release also includes the complete updater manifest, ZIP and blockmap asset set required by the in-app updater. The shared Agentic brand color remains `#d77757`; functional controls use the interaction blue `#339cff` in both light and dark modes.
 
 ## Install
 
