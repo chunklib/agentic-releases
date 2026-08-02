@@ -8,14 +8,14 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.9` release candidate | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic VS Code Extension | `1.0.9` release candidate | installable VSIX on the matching CLI GitHub Release; Marketplace/Open VSX not yet claimed |
-| Agentic Desktop | `1.0.9` release candidate | macOS arm64, ad-hoc signed and not Apple-notarized |
+| CLI / npm | `agency-agentic@1.0.10` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
+| Agentic VS Code Extension | `1.0.10` | installable VSIX on the matching CLI GitHub Release; Marketplace/Open VSX not yet claimed |
+| Agentic Desktop | `1.0.10` | macOS arm64, ad-hoc signed and not Apple-notarized; automatic updates are disabled |
 | Upstream baseline | OpenCode `v1.18.11` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.0.9 continues to follow OpenCode v1.18.11. It adds a branded VS Code VSIX wired to the Agentic CLI and documents JetBrains ACP setup. It also includes the Desktop titlebar interaction fix that gives session tabs distinct default, hover, and pressed states without changing the shared settings controls.
+Agentic 1.0.10 continues to follow OpenCode v1.18.11. It disables the unusable automatic-update path for ad-hoc macOS packages, keeps the runtime alive if an installer handoff fails, and ships manual DMG/ZIP updates without updater metadata. Mini mode now uses Agentic wording and renders its `Thinking:` label in the system brand color without italics. The version-matched VSIX remains available on the CLI release.
 
 ## Install
 
