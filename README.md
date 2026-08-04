@@ -8,34 +8,37 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `agency-agentic@1.0.10` | npm package; the GitHub compatibility archive is limited to macOS arm64 |
-| Agentic VS Code Extension | `1.0.10` | installable VSIX on the matching CLI GitHub Release; Marketplace/Open VSX not yet claimed |
-| Agentic Desktop | `1.0.10` | macOS arm64, ad-hoc signed and not Apple-notarized; automatic updates are disabled |
-| Upstream baseline | OpenCode `v1.18.11` | Agentic follows stable OpenCode releases and does not pre-emptively adopt unfinished development migrations |
+| CLI / npm | `@chunklib/agentic@1.1.1` | release candidate from the standalone repository |
+| Agentic VS Code Extension | `1.1.1` | source and validation artifact only in this release; Marketplace/Open VSX not claimed |
+| Agentic Desktop | `1.1.1` | macOS arm64 release candidate, ad-hoc signed and not Apple-notarized; automatic updates are disabled |
+| Upstream baseline | OpenCode `v1.18.13` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
 The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.0.10 continues to follow OpenCode v1.18.11. It disables the unusable automatic-update path for ad-hoc macOS packages, keeps the runtime alive if an installer handoff fails, and ships manual DMG/ZIP updates without updater metadata. Mini mode now uses Agentic wording and renders its `Thinking:` label in the system brand color without italics. The version-matched VSIX remains available on the CLI release.
+Agentic 1.1.1 follows OpenCode v1.18.13, including the Desktop v2 background CLI integration at the same opt-in boundary. The default and production Desktop path remains the v1 Node sidecar; v2 is not made the default and its CLI resource is still limited to upstream-equivalent development packaging. The same source version is used for the npm and macOS arm64 Desktop candidates. The VSIX is version-synchronized and validated by the full gate, but this release does not publish it to Marketplace or Open VSX.
 
 ## Install
 
 Install the npm CLI:
 
 ```bash
-npm install --global agency-agentic
+npm install --global @chunklib/agentic
 agentic --version
 ```
 
-Install the current compatible GitHub binary for a supported platform:
+The package name changed at the standalone-repository baseline. An existing `agency-agentic@1.0.10` executable cannot discover the new scope through `agentic upgrade`; migrate once with the same npm installation prefix, then future npm-channel upgrades use `@chunklib/agentic`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jishenjason-cmd/agentic-releases/main/install.sh | bash
+npm uninstall --global agency-agentic
+npm install --global @chunklib/agentic@1.1.1
 agentic --version
 ```
 
-Desktop packages are published in [Agentic Desktop Releases](https://github.com/jishenjason-cmd/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
+The CLI GitHub binary channel is separate and may lag npm. The npm command above is the authoritative installation path for this 1.1.1 release candidate; no matching CLI GitHub archive is claimed here.
 
-The VS Code extension is distributed as `agentic-vscode-<version>.vsix` on the matching [Agentic CLI Release](https://github.com/jishenjason-cmd/agentic-releases/releases). Install the same-version CLI first, then use “Extensions: Install from VSIX...” in Visual Studio Code. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
+
+The Agentic 1.1.1 VSIX is source-synchronized and release-gate validated but is not published to a CLI GitHub Release, Marketplace, or Open VSX by this release. A future VSIX publication must identify its exact channel and matching CLI version. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
@@ -43,14 +46,13 @@ Agentic intentionally keeps its fork surface narrow. Current product-specific or
 
 - Agentic command, configuration, data, application, protocol, visual identity, and independent release channels.
 - CLI, TUI, version-matched Web UI, and Desktop product surfaces.
-- Persisted-tab recovery, keyed titlebar and prompt controls, attachment deduplication, and updated toast/review navigation from the OpenCode v1.18.11 baseline.
+- Persisted-tab recovery, keyed titlebar and prompt controls, attachment deduplication, and updated toast/review navigation through the OpenCode v1.18.13 baseline.
 - Provider allowlists enforced before dynamic discovery hooks; Modal discovery credentials restricted to approved HTTPS Modal inference origins.
 - `AGENTS.md` instruction discovery across global, project-root, and nested directory scopes, with closer instructions applied as files are accessed.
 - Upstream model-specific prompt strategies plus a thin generic engineering discipline covering diagnosis, sensitive information, minimal changes, and truthful verification.
 - Agentic Desktop aligned with the official Electron `utilityProcess` and Node server-sidecar lifecycle.
 - Session recovery when a persisted working directory was deleted but the same project's valid worktree still exists.
-- Optional Agentic Flow orchestration through the separately versioned `@vector-workshop/agentic-flow` plugin.
-- Optional working-memory or Agentmemory integrations through standard plugin or MCP boundaries; Agentic 1.0 does not embed Agentmemory in its core runtime.
+- Optional Agentic Flow orchestration through the separately versioned `@chunklib/agentic-flow` plugin.
 
 Agentic does not replace OpenCode service identities, provider IDs, protocol headers, package names, OAuth endpoints, Zen, Go, Share, or plugin SDK compatibility identifiers with invented Agentic services.
 
@@ -89,11 +91,9 @@ Project rules use the upstream-standard filename `AGENTS.md`. Agentic does not i
 
 For the complete upstream schema, providers, agents, commands, permissions, MCP, plugins, and SDK behavior, consult [OpenCode Docs](https://opencode.ai/docs).
 
-## Flow and optional memory
+## Flow
 
-Agentic Flow is not enabled implicitly. Install and configure the separately released `@vector-workshop/agentic-flow` plugin only when its orchestration behavior is wanted; ordinary Agentic sessions should not pay its routing cost by default.
-
-Agentic 1.0 does not define a private `agentmemory` schema or register built-in `memory_*` tools. Memory integrations are external and must document their own Node/Bun compatibility, data location, hooks, model or embedding costs, migration, and failure behavior. Existing `~/.agentmemory` data is not deleted or migrated automatically.
+Agentic Flow is not enabled implicitly. Install and configure the separately released `@chunklib/agentic-flow` plugin only when its orchestration behavior is wanted; ordinary Agentic sessions should not pay its routing cost by default.
 
 ## Agentic docs versus OpenCode docs
 
@@ -101,7 +101,7 @@ Use this repository for:
 
 - Agentic versions, release artifacts, installation, checksums, and supported platforms.
 - Agentic CLI/Desktop/Web architecture and product-specific behavior.
-- Agentic Flow and optional memory integration boundaries.
+- Agentic Flow integration boundaries.
 - Agentic branding, feedback, and distribution questions.
 
 Use [OpenCode Docs](https://opencode.ai/docs) for:
@@ -120,6 +120,6 @@ Verify release checksums before installation. Signing and notarization are platf
 
 ## Feedback
 
-Report Agentic installation, packaging, Desktop, branding, or Agentic-specific behavior issues in [Agentic Releases issues](https://github.com/jishenjason-cmd/agentic-releases/issues).
+Report Agentic installation, packaging, Desktop, branding, or Agentic-specific behavior issues in [Agentic Releases issues](https://github.com/chunklib/agentic-releases/issues).
 
 When a problem reproduces in upstream OpenCode without an Agentic-specific change, consult the [OpenCode repository](https://github.com/anomalyco/opencode) and its documentation instead.
