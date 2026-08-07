@@ -6,16 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
+Agentic 1.1.3 is the current release candidate; the latest published artifacts remain 1.1.2 until release reconciliation completes.
+
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.2` | npm plus macOS arm64 GitHub compatibility prerelease |
-| Agentic VS Code Extension | `1.1.2` | CLI GitHub compatibility prerelease asset; Marketplace/Open VSX not claimed |
-| Agentic Desktop | `1.1.2` | macOS arm64 release, ad-hoc signed and not Apple-notarized; automatic updates are disabled |
+| CLI / npm | `@chunklib/agentic@1.1.3` | Candidate; the published npm and macOS arm64 compatibility prerelease remain 1.1.2 |
+| Agentic VS Code Extension | `1.1.3` | Candidate CLI release asset; Marketplace/Open VSX not claimed |
+| Agentic Desktop | `1.1.3` | Candidate macOS arm64 release; the published ad-hoc signed package remains 1.1.2 |
 | Upstream baseline | OpenCode `v1.18.14` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The published platform list describes what was built and verified for this release. It is not a claim that other operating systems or architectures have passed the same release gates.
+The candidate platform list describes the intended 1.1.3 release scope. Until publication and reconciliation complete, installation commands and release links below continue to identify the published 1.1.2 artifacts. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.1.2 follows OpenCode v1.18.14, including the Desktop v2 background CLI integration at the same opt-in boundary. The default and production Desktop path remains the v1 Node sidecar; v2 is not made the default and its CLI resource is still limited to upstream-equivalent development packaging. The npm package, CLI compatibility prerelease, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
+Agentic 1.1.3 retains the OpenCode v1.18.14 baseline and fixes duplicate version text in the native macOS About panel plus nondeterministic MCP switch colors caused by legacy/V2 CSS selector collisions. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, CLI compatibility prerelease, VSIX asset and macOS arm64 Desktop release will use the same source version. The VSIX is not published to Marketplace or Open VSX.
 
 ## Install
 
