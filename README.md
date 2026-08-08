@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.4 is the current release candidate; the latest published artifacts remain 1.1.3 until publication completes.
+Agentic 1.1.5 is the current release candidate; the latest published artifacts remain 1.1.4 until publication completes.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.4` | Candidate; published npm and macOS arm64 compatibility prerelease remain 1.1.3 |
-| Agentic VS Code Extension | `1.1.4` | Candidate CLI release asset; Marketplace/Open VSX not claimed |
-| Agentic Desktop | `1.1.4` | Candidate macOS arm64 ad-hoc signed package; published package remains 1.1.3 |
+| CLI / npm | `@chunklib/agentic@1.1.5` | Candidate; published npm and macOS arm64 compatibility prerelease remain 1.1.4 |
+| Agentic VS Code Extension | `1.1.5` | Candidate CLI release asset; Marketplace/Open VSX not claimed |
+| Agentic Desktop | `1.1.5` | Candidate macOS arm64 ad-hoc signed package; published package remains 1.1.4 |
 | Upstream baseline | OpenCode `v1.18.15` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The candidate platform list describes the intended 1.1.4 release scope. Until publication completes, installation commands and release links below continue to identify the published 1.1.3 artifacts. It is not a claim that other operating systems or architectures have passed the same release gates.
+The candidate platform list describes the intended 1.1.5 scope. Until publication completes, installation commands and release links below continue to identify the published 1.1.4 artifacts. It is not a claim that other operating systems or architectures have passed the same release gates.
 
-Agentic 1.1.4 retains the OpenCode v1.18.15 baseline and fixes the MCP server toggle so its enabled state always renders the single blue interaction color used by the settings pages, independent of CSS loading order. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, CLI compatibility prerelease, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
+Agentic 1.1.5 retains the OpenCode v1.18.15 baseline and completes the MCP server toggle alignment: the status popover toggle now also renders the single blue interaction color used by the settings pages, independent of CSS loading order. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, CLI compatibility prerelease, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
 
 ## Install
 
@@ -32,15 +32,15 @@ The package name changed at the standalone-repository baseline. An existing `age
 
 ```bash
 npm uninstall --global agency-agentic
-npm install --global @chunklib/agentic@1.1.3
+npm install --global @chunklib/agentic@1.1.5
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.3 also provides a checksum-protected macOS arm64 archive in the [Agentic CLI compatibility prerelease](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.3); npm remains the portable installation path.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.5 also provides a checksum-protected macOS arm64 archive in the [Agentic CLI compatibility prerelease](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.5); npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.3 VSIX is source-synchronized, release-gate validated and published as a checksum-protected asset in the matching CLI GitHub compatibility prerelease. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.5 VSIX is source-synchronized, release-gate validated and published as a checksum-protected asset in the matching CLI GitHub compatibility prerelease. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
