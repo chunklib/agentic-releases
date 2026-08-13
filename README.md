@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.7 is the current source release candidate. The latest published release remains 1.1.6 until npm and both GitHub release channels are reconciled.
+Agentic 1.1.8 is a release candidate undergoing formal acceptance and has not been published yet. Agentic 1.1.7 remains the current public release reconciled against npm and both GitHub release channels.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.7` | Release candidate; latest published version is 1.1.6 |
-| Agentic VS Code Extension | `1.1.7` | Release candidate for the checksum-protected CLI Release; Marketplace/Open VSX not claimed |
-| Agentic Desktop | `1.1.7` | Release candidate for macOS arm64 ad-hoc signed packages |
-| Upstream baseline | OpenCode `v1.18.17` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
+| CLI / npm | `@chunklib/agentic@1.1.8` | Release candidate; npm and GitHub assets are not published yet |
+| Agentic VS Code Extension | `1.1.8` | Release candidate for the CLI Release asset; Marketplace/Open VSX not claimed |
+| Agentic Desktop | `1.1.8` | Release candidate for macOS arm64 ad-hoc signed DMG and ZIP packages |
+| Upstream baseline | OpenCode `v1.18.18` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The platform list describes the intended 1.1.7 release scope and the currently published 1.1.6 scope. It is not a claim that other operating systems or architectures have passed the same release gates.
+The candidate platform list describes the intended 1.1.8 scope. It is not a publication claim or a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.7 follows the OpenCode v1.18.17 stable baseline, including incremental compaction, server default-model synchronization, DeepSeek V4 Flash and merge-gateway transforms, GitHub Copilot PDF capability, Muse Spark/Glimmer prompt selection, bounded retry jitter and R2 SQL stats synchronization. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, platform-limited formal CLI GitHub Release, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
+Agentic 1.1.8 follows the OpenCode v1.18.18 stable baseline, including the official Kimi provider prompt selection and expanded Groq, Mistral and xAI reasoning-effort support. It also hardens the reusable upstream lifecycle, orders final-full evidence before documentation closure, and avoids rebuilding Flow during upgrades unless the lock or host interface changed while still forcing compatibility for a product release. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, platform-limited formal CLI GitHub Release, VSIX asset and macOS arm64 Desktop release will use the same source version after publication. The VSIX is not published to Marketplace or Open VSX.
 
 ## Install
 
@@ -32,15 +32,15 @@ The package name changed at the standalone-repository baseline. An existing `age
 
 ```bash
 npm uninstall --global agency-agentic
-npm install --global @chunklib/agentic@1.1.6
+npm install --global @chunklib/agentic@1.1.7
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. The latest published Agentic 1.1.6 provides a checksum-protected macOS arm64 archive in the [platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.6); npm remains the portable installation path. The 1.1.7 links are not published until release reconciliation completes.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.7 provides a checksum-protected macOS arm64 archive in the [platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.7); npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The published Agentic 1.1.6 VSIX remains available as a checksum-protected asset in the matching formal CLI GitHub Release; the source-synchronized 1.1.7 VSIX is still a release candidate. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.7 VSIX is available as a checksum-protected asset in the matching formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
