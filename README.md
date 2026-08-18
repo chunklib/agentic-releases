@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.10 is the current public release, reconciled against npm, both GitHub release channels, source tags, and the public installer.
+Agentic 1.1.11 is a release candidate undergoing formal acceptance and has not been published yet. Agentic 1.1.10 remains the current public release reconciled against npm, both GitHub release channels, source tags, and the public installer.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.10` | Published to npm and the platform-limited formal CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.10` | Checksum-protected CLI Release asset; Marketplace/Open VSX not claimed |
-| Agentic Desktop | `1.1.10` | Published macOS arm64 ad-hoc signed DMG and ZIP packages; not notarized |
+| CLI / npm | `@chunklib/agentic@1.1.11` | Release candidate; npm and GitHub assets are not published yet |
+| Agentic VS Code Extension | `1.1.11` | Release candidate for the CLI Release asset; Marketplace/Open VSX not claimed |
+| Agentic Desktop | `1.1.11` | Release candidate for macOS arm64 ad-hoc signed DMG and ZIP packages |
 | Upstream baseline | OpenCode `v1.18.18` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The published platform list describes the verified 1.1.10 scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The candidate platform list describes the intended 1.1.11 scope. It is not a publication claim or a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.10 follows the OpenCode v1.18.18 stable baseline and extends the strictly monotonic package-manager upgrade boundary introduced in 1.1.9. When a configured npm mirror lags the official registry, Agentic keeps the configured source, performs only a diagnostic official lookup, stops without changing installations, and prints an explicit one-shot `--registry https://registry.npmjs.org` recovery command. The explicit registry is then bound to both version lookup and npm, pnpm, or bun installation. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, platform-limited formal CLI GitHub Release, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
+Agentic 1.1.11 follows the OpenCode v1.18.18 stable baseline and keeps the strictly monotonic, channel-bound package-manager upgrade safety delivered in 1.1.10. Routine successful upgrades no longer print the managed executable's absolute filesystem path; the same exact entrypoint is still verified after installation, and its path remains available in the actionable mismatch error when multiple installations conflict. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, platform-limited formal CLI GitHub Release, VSIX asset and macOS arm64 Desktop release will use the same source version after publication. The VSIX is not published to Marketplace or Open VSX.
 
 ## Install
 
@@ -36,11 +36,11 @@ npm install --global @chunklib/agentic@1.1.10
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.10 is available in the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.10); npm remains the portable installation path.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.10 remains available in the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.10) while 1.1.11 completes formal acceptance; npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.10 VSIX is available as a checksum-protected asset in the current formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.10 VSIX remains available as a checksum-protected asset in the current formal CLI GitHub Release. The 1.1.11 VSIX is not a publication claim until the candidate release completes. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
