@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.12 is the current public release across the synchronized CLI/npm, VSIX, and Desktop source version.
+Agentic 1.1.13 is the current source release across the synchronized CLI/npm, VSIX, and Desktop version, following the OpenCode v1.18.19 stable baseline. Publication is in progress.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.12` | npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.12` | Checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.12` | Formal macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
-| Upstream baseline | OpenCode `v1.18.18` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
+| CLI / npm | `@chunklib/agentic@1.1.13` | npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.13` | Checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.13` | Formal macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| Upstream baseline | OpenCode `v1.18.19` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The published platform list describes the verified 1.1.12 scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The published platform list describes the verified 1.1.13 scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.12 follows the OpenCode v1.18.18 stable baseline and keeps the strictly monotonic, channel-bound package-manager upgrade safety delivered in 1.1.10. When an npm-compatible mirror lags, Agentic now prints an exact-version `agentic upgrade` command against the official registry first, preserving wrapper verification, and a method-matched native npm/pnpm/bun command only as a fallback; neither changes global registry configuration. Routine successful upgrades do not print the managed executable's absolute filesystem path; the same exact entrypoint is still verified after installation, and its path remains available in the actionable mismatch error when multiple installations conflict. The Desktop v2 background CLI remains at the same upstream opt-in boundary: the default and production Desktop path is the v1 Node sidecar, and the v2 CLI resource remains limited to upstream-equivalent development packaging. The npm package, platform-limited formal CLI GitHub Release, VSIX asset and macOS arm64 Desktop release use the same source version. The VSIX is not published to Marketplace or Open VSX.
+Agentic 1.1.13 follows the OpenCode v1.18.19 stable baseline, which adopts upstream session context-epoch refactoring, LLM session-affinity request headers, a tightened Cloudflare AI Gateway token boundary for Workers AI, a ripgrep surrogate boundary fix, and compaction HTTP passthrough; Agentic keeps the OpenCode Console device-OAuth endpoint at `console.opencode.ai` per its brand boundary. The package-manager upgrade safety, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy from 1.1.12 remain unchanged.
 
 ## Install
 
