@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.15 is the current source release across the synchronized CLI/npm, VSIX, and Desktop version, following the OpenCode v1.18.21 stable baseline. Publication is in progress.
+Agentic 1.1.16 is the current source candidate across the synchronized CLI/npm, VSIX, and Desktop version, following the OpenCode v1.18.21 stable baseline.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.15` | npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.15` | Checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.15` | Formal macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| CLI / npm | `@chunklib/agentic@1.1.16` candidate | Planned npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.16` candidate | Planned checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.16` candidate | Planned macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
 | Upstream baseline | OpenCode `v1.18.21` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The published platform list describes the verified 1.1.15 scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The candidate platform list describes the intended 1.1.16 scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.15 follows the OpenCode v1.18.21 stable baseline, which adopts Google Vertex continental REP endpoint routing and App/Console/Stats UI and i18n updates. Agentic also merged the upstream unknown-finish continue change with a tool-work guard so interrupted streams preserve partial output while clean unknown finishes keep the turn running. The package-manager upgrade safety, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy from 1.1.14 remain unchanged.
+Agentic 1.1.16 follows the OpenCode v1.18.21 stable baseline and narrows the unknown-finish tool-work guard to the current user turn. Completed tools from earlier turns no longer suppress a clean continuation in a later turn, while interrupted streams after current-turn tool work still preserve partial output. The package-manager upgrade safety, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy remain unchanged.
 
 ## Install
 
