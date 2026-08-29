@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.18 is the current synchronized CLI/npm, VSIX, and Desktop source candidate, following the OpenCode v1.18.23 stable baseline.
+Agentic 1.1.19 is the current synchronized CLI/npm, VSIX, and Desktop release candidate, following the OpenCode v1.18.25 stable baseline. Formal publication is pending the release rehearsal and approval gates.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.18` candidate | Planned npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.18` candidate | Planned checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.18` candidate | Planned macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
-| Upstream baseline | OpenCode `v1.18.23` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
+| CLI / npm | `@chunklib/agentic@1.1.19` | Prepared for npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.19` | Prepared checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.19` | Prepared macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| Upstream baseline | OpenCode `v1.18.25` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The candidate platform list describes the intended 1.1.18 scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the verified 1.1.19 candidate scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.18 follows OpenCode v1.18.23 and adopts explicit SemVer global upgrades, provider-wide parent-session headers, corrected Cloudflare AI Gateway routing, hardened Device OAuth URL parsing, GitHub OIDC repository claims, and Console/Stats improvements. The package-manager upgrade safety, official unknown-finish continuation, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy remain unchanged.
+Agentic 1.1.19 follows OpenCode v1.18.25 and includes V1/V2 configuration compatibility, Azure Entra ID/Azure CLI authentication, a Bedrock reasoning replay fix, legacy Drizzle journal and workspace-name migration, and immediate Home session archive removal. The package-manager upgrade safety, Agentic/OpenCode service boundaries, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy remain unchanged.
 
 ## Install
 
@@ -32,15 +32,15 @@ The package name changed at the standalone-repository baseline. An existing `age
 
 ```bash
 npm uninstall --global agency-agentic
-npm install --global @chunklib/agentic@1.1.17
+npm install --global @chunklib/agentic@1.1.19
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.17 is available in the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.17); npm remains the portable installation path.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.19 is prepared for the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.19); npm remains the portable installation path after publication.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.17 VSIX is available as a checksum-protected asset in the current formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.19 VSIX is prepared as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
