@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.21 is the current synchronized CLI/npm, VSIX, and Desktop release candidate, following the OpenCode v1.18.29 stable baseline. Formal publication is pending the release rehearsal and approval gates.
+Agentic 1.1.22 is the current synchronized CLI/npm, VSIX, and Desktop release candidate, following the OpenCode v1.18.29 stable baseline. Formal publication, artifact verification, and CLI/Desktop suite reconciliation are pending. Version 1.1.21 remains the published release until these gates complete.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.21` | Prepared for npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.21` | Prepared checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.21` | Prepared macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| CLI / npm | `@chunklib/agentic@1.1.22` | Prepared for npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.22` | Prepared as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.22` | Prepared macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
 | Upstream baseline | OpenCode `v1.18.29` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The platform list describes the verified 1.1.21 candidate scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the intended 1.1.22 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.21 follows OpenCode v1.18.29 and includes TUI Unicode ellipsis typography with Agentic theme contracts preserved, provider 300s header/chunk timeout defaults with SSE cancellation hardening, Copilot session header and Codex model filtering adoption, Claude thinking scope handling, and Core `NPM_CONFIG_AUDIT=false` preload preservation. The package-manager upgrade safety, Agentic/OpenCode service boundaries, Desktop v2 opt-in boundary, synchronized npm/CLI/VSIX/Desktop source version, and the VSIX-not-published-to-Marketplace/Open-VSX policy remain unchanged.
+Agentic 1.1.22 retains the OpenCode v1.18.29 baseline and restores upstream model-selector spacing, subagent and reset icons, and v2 theme mappings that were omitted after a historical rollback. Desktop packaging now preserves the exact release version in its Node sidecar and checks that version after the final build. Source fixes also restore Console non-streaming HTTP 529 handling and strengthen upgrade/release authorization and evidence preservation. Console deployment is outside this CLI/Desktop release. Existing provider, service, sidecar, and publication boundaries remain unchanged.
 
 ## Install
 
@@ -32,15 +32,15 @@ The package name changed at the standalone-repository baseline. An existing `age
 
 ```bash
 npm uninstall --global agency-agentic
-npm install --global @chunklib/agentic@1.1.21
+npm install --global @chunklib/agentic@1.1.22
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.21 is prepared for the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.21); npm remains the portable installation path after publication.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.22 is prepared for the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.22); npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.21 VSIX is prepared as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.22 VSIX is prepared as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
