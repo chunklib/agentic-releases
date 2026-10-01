@@ -6,16 +6,16 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.24 is the synchronized source candidate for CLI/npm, VSIX, and Desktop, following the OpenCode v1.18.34 stable baseline. Formal publication, final artifact verification, and CLI/Desktop suite reconciliation are pending. The previously completed synchronized release is 1.1.23.
+Agentic 1.1.24 is the current synchronized CLI/npm, VSIX, and Desktop release, following the OpenCode v1.18.34 stable baseline. Formal publication, artifact verification, and CLI/Desktop suite reconciliation are complete.
 
-| Product | Version | Planned release scope |
+| Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.24` | Planned npm publication plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.24` | Planned checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.24` | Planned macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| CLI / npm | `@chunklib/agentic@1.1.24` | Published to npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.24` | Published as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.24` | Published macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
 | Upstream baseline | OpenCode `v1.18.34` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The platform list describes the planned 1.1.24 release scope; final publication is pending. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the verified 1.1.24 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
 Agentic 1.1.24 follows OpenCode v1.18.34 with debug-config credential redaction, Cloudflare Gateway timeouts, Gemini thinking and effort controls, Bedrock image-model eligibility, Together streaming usage, MCP browser launch-error reporting, session identity headers, and macOS local-binary re-signing. The Agentic provider allowlist, package identity, Desktop Node sidecar default with explicit v2 opt-in, and publication boundaries remain unchanged.
 
@@ -36,11 +36,11 @@ npm install --global @chunklib/agentic@1.1.24
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.24 is planned for the [platform-limited Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.24); npm remains the portable installation path.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.24 is available from the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.24); npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.24 VSIX is planned for publication as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.24 VSIX is published as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
