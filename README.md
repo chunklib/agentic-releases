@@ -6,16 +6,16 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.25 is the synchronized CLI/npm, VSIX, and Desktop release candidate, following the OpenCode v1.18.35 stable baseline. Formal publication, artifact verification, and CLI/Desktop suite reconciliation are pending; the previous formal release is 1.1.24.
+Agentic 1.1.25 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.18.35 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.25` | Planned for npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.25` | Planned as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.25` | Planned macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| CLI / npm | `@chunklib/agentic@1.1.25` | Published on npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.25` | Published as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.25` | Published macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
 | Upstream baseline | OpenCode `v1.18.35` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
 
-The platform list describes the planned 1.1.25 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the verified 1.1.25 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
 Agentic 1.1.25 follows OpenCode v1.18.35 with xAI tool-result image support and filtering of unsupported image formats, xAI and GitLab provider updates, and canonical redirects plus JSON/Markdown output for the upstream Stats service. The Agentic provider allowlist, package identity, Desktop Node sidecar default with explicit v2 opt-in, and publication boundaries remain unchanged.
 
