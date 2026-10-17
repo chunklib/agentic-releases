@@ -4,6 +4,18 @@ Agentic is a proprietary coding-agent distribution maintained by Vector Workshop
 
 This page is the canonical public entry point for Agentic-specific behavior. For upstream-compatible configuration and APIs, use the [OpenCode documentation](https://opencode.ai/docs).
 
+## Release candidate
+
+Agentic 1.1.26 follows the OpenCode v1.19.2 stable baseline. Upstream integration passed candidate full and independent final full, each with 102 checks, no failures and no skips. Product release validation, artifact sealing and publication are pending. The previous synchronized formal release remains 1.1.25.
+
+| Product | Candidate version | Planned platform |
+|---|---:|---|
+| CLI / npm | `@chunklib/agentic@1.1.26` | npm plus macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.26` | CLI Release asset; not Marketplace/Open VSX |
+| Agentic Desktop | `1.1.26` | macOS arm64 ad-hoc signed, non-notarized DMG and ZIP |
+
+The new baseline stops the discontinued upstream share service, uses update notifications followed by explicit updates, fixes Yarn upgrades and PTY validation order, and adopts OpenAI ultrafast and Copilot reasoning replay fixes. Agentic identity, registry and downgrade protections, provider allowlists and the Desktop Node sidecar default with explicit v2 opt-in remain in place. Agentic does not offer replacement by the separate OpenCode 2 product. Local JSON session import/export remains available.
+
 ## Current release
 
 Agentic 1.1.25 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.18.35 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
@@ -56,7 +68,7 @@ Agentic intentionally keeps its fork surface narrow. Current product-specific or
 - Session recovery when a persisted working directory was deleted but the same project's valid worktree still exists.
 - Optional Agentic Flow orchestration through the separately versioned `@chunklib/agentic-flow` plugin.
 
-Agentic does not replace OpenCode service identities, provider IDs, protocol headers, package names, OAuth endpoints, Zen, Go, Share, or plugin SDK compatibility identifiers with invented Agentic services.
+Agentic does not replace OpenCode service identities, provider IDs, protocol headers, package names, OAuth endpoints, Zen, Go, or plugin SDK compatibility identifiers with invented Agentic services.
 
 ## Runtime surfaces
 
