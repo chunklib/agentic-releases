@@ -4,32 +4,20 @@ Agentic is a proprietary coding-agent distribution maintained by Vector Workshop
 
 This page is the canonical public entry point for Agentic-specific behavior. For upstream-compatible configuration and APIs, use the [OpenCode documentation](https://opencode.ai/docs).
 
-## Release candidate
-
-Agentic 1.1.26 follows the OpenCode v1.19.2 stable baseline. Upstream integration passed candidate full and independent final full, each with 102 checks, no failures and no skips. Product release validation, artifact sealing and publication are pending. The previous synchronized formal release remains 1.1.25.
-
-| Product | Candidate version | Planned platform |
-|---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.26` | npm plus macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.26` | CLI Release asset; not Marketplace/Open VSX |
-| Agentic Desktop | `1.1.26` | macOS arm64 ad-hoc signed, non-notarized DMG and ZIP |
-
-The new baseline stops the discontinued upstream share service, uses update notifications followed by explicit updates, fixes Yarn upgrades and PTY validation order, and adopts OpenAI ultrafast and Copilot reasoning replay fixes. Agentic identity, registry and downgrade protections, provider allowlists and the Desktop Node sidecar default with explicit v2 opt-in remain in place. Agentic does not offer replacement by the separate OpenCode 2 product. Local JSON session import/export remains available.
-
 ## Current release
 
-Agentic 1.1.25 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.18.35 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
+Agentic 1.1.26 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.19.2 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
 
 | Product | Version | Published platform |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.25` | Published on npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.25` | Published as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.25` | Published macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
-| Upstream baseline | OpenCode `v1.18.35` | Agentic adopts stable-release integration points in the same release while preserving upstream opt-in/default boundaries |
+| CLI / npm | `@chunklib/agentic@1.1.26` | Published on npm plus a formal macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.26` | Published as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.26` | Published macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| Upstream baseline | OpenCode `v1.19.2` | Stable-release integration with Agentic identity and explicit opt-in/default boundaries |
 
-The platform list describes the verified 1.1.25 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the verified 1.1.26 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
 
-Agentic 1.1.25 follows OpenCode v1.18.35 with xAI tool-result image support and filtering of unsupported image formats, xAI and GitLab provider updates, and canonical redirects plus JSON/Markdown output for the upstream Stats service. The Agentic provider allowlist, package identity, Desktop Node sidecar default with explicit v2 opt-in, and publication boundaries remain unchanged.
+The new baseline stops the discontinued upstream share service, uses update notifications followed by explicit updates, fixes Yarn upgrades and PTY validation order, and adopts OpenAI ultrafast and Copilot reasoning replay fixes. Agentic identity, registry and downgrade protections, provider allowlists and the Desktop Node sidecar default with explicit v2 opt-in remain in place. Agentic does not offer replacement by the separate OpenCode 2 product. Local JSON session import/export remains available.
 
 ## Install
 
@@ -44,15 +32,15 @@ The package name changed at the standalone-repository baseline. An existing `age
 
 ```bash
 npm uninstall --global agency-agentic
-npm install --global @chunklib/agentic@1.1.25
+npm install --global @chunklib/agentic@1.1.26
 agentic --version
 ```
 
-The CLI GitHub binary channel is separate from npm. Agentic 1.1.25 is available from the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.25); npm remains the portable installation path.
+The CLI GitHub binary channel is separate from npm. Agentic 1.1.26 is available from the [current platform-limited formal Agentic CLI Release](https://github.com/chunklib/agentic-releases/releases/tag/v1.1.26); npm remains the portable installation path.
 
 Desktop packages are published in [Agentic Desktop Releases](https://github.com/chunklib/agentic-desktop-releases/releases). Check the release notes, checksum, signing, notarization, architecture, and operating-system scope before installing.
 
-The Agentic 1.1.25 VSIX is published as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
+The Agentic 1.1.26 VSIX is published as a checksum-protected asset for the formal CLI GitHub Release. It is not published to Marketplace or Open VSX. JetBrains IDEs that expose ACP configuration can launch Agentic with command `agentic` and argument `acp`; no separate JetBrains plugin is required.
 
 ## Agentic-specific behavior
 
