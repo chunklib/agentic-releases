@@ -4,6 +4,18 @@ Agentic is a proprietary coding-agent distribution maintained by Vector Workshop
 
 This page is the canonical public entry point for Agentic-specific behavior. For upstream-compatible configuration and APIs, use the [OpenCode documentation](https://opencode.ai/docs).
 
+## Release candidate
+
+Agentic 1.1.27 follows OpenCode v1.19.3. Candidate full and independent final full each passed all 102 checks with no failures or skips. Product release validation, sealing and publication are pending; the previous synchronized formal release remains 1.1.26.
+
+| Product | Candidate version | Planned platform |
+|---|---:|---|
+| CLI / npm | `@chunklib/agentic@1.1.27` | npm plus macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.27` | CLI Release asset; not Marketplace/Open VSX |
+| Agentic Desktop | `1.1.27` | macOS arm64 ad-hoc signed, non-notarized DMG and ZIP |
+
+The new baseline accepts model `reasoning_options` to generate reasoning variants in place of catalog variants, then applies configured variant overrides. An empty options array clears catalog variants; omitting the field preserves the existing catalog/fallback behavior. Agentic identity, provider allowlists, update channels, downgrade protections and the Desktop Node default with explicit v2 opt-in remain unchanged.
+
 ## Current release
 
 Agentic 1.1.26 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.19.2 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
