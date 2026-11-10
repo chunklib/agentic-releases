@@ -6,18 +6,18 @@ This page is the canonical public entry point for Agentic-specific behavior. For
 
 ## Current release
 
-Agentic 1.1.27 is the synchronized formal CLI/npm, VSIX, and Desktop release, following the OpenCode v1.19.3 stable baseline. The full release gate passed all 102 checks with no failures or skips; sealed artifact verification and CLI/Desktop suite reconciliation are complete.
+Agentic 1.1.28 is the synchronized CLI/npm, VSIX, and Desktop source version following the OpenCode v1.19.5 stable baseline. Candidate full and independent final full each passed all 102 checks with no failures or skips. Release preparation, sealed artifact verification and formal publication are pending; the previous formal release remains 1.1.27 on OpenCode v1.19.3.
 
-| Product | Version | Published platform |
+| Product | Version | Release scope |
 |---|---:|---|
-| CLI / npm | `@chunklib/agentic@1.1.27` | Published on npm plus a formal macOS arm64 CLI GitHub Release |
-| Agentic VS Code Extension | `1.1.27` | Published as a checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
-| Agentic Desktop | `1.1.27` | Published macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
-| Upstream baseline | OpenCode `v1.19.3` | Stable-release integration with Agentic identity and explicit opt-in/default boundaries |
+| CLI / npm | `@chunklib/agentic@1.1.28` | npm and a macOS arm64 CLI GitHub Release |
+| Agentic VS Code Extension | `1.1.28` | Checksum-protected CLI Release asset; not published to Marketplace/Open VSX |
+| Agentic Desktop | `1.1.28` | macOS arm64 ad-hoc signed, non-notarized DMG and ZIP packages |
+| Upstream baseline | OpenCode `v1.19.5` | Stable v1 integration with Agentic identity and explicit opt-in/default boundaries |
 
-The platform list describes the verified 1.1.27 release scope. It is not a claim that other operating systems or architectures passed the same release gates.
+The platform list describes the intended 1.1.28 publication scope. Other operating systems and architectures are outside this release.
 
-The new baseline accepts model `reasoning_options` to generate reasoning variants in place of catalog variants, then applies configured variant overrides. An empty options array clears catalog variants; omitting the field preserves the existing catalog/fallback behavior. Agentic identity, provider allowlists, update channels, downgrade protections and the Desktop Node default with explicit v2 opt-in remain unchanged. The upstream share service remains discontinued; local JSON session import/export is available.
+This baseline propagates worker RPC failures to callers, aligns PTY authorization with actual route matching, and updates the pinned Bun toolchain to 1.4.4. Model `reasoning_options`, configured variant overrides, Agentic identity, provider allowlists, update channels, downgrade protections and the Desktop Node default with explicit v2 opt-in remain available. The upstream share service remains discontinued; local JSON session import/export is available.
 
 ## Install
 
